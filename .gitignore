@@ -3,4 +3,4 @@
 *.obj
 *.pdb
 *.exe
-/test
+test/*

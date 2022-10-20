@@ -1,7 +1,7 @@
 #include <iostream>
 #include <iomanip>
 
-struct info {
+struct Info {
     std::string surname;        // Прізвище
     std::string name;           // Ім'я
     std::string middleName;     // По батькові
@@ -27,7 +27,7 @@ struct info {
     double issueAmount = 0.0;       // Сума до видачі
 };
 
-void interestOnProfits(int size, info* people) {    // Відсотки від прибутку
+void InterestOnProfits(int size, Info* people) {    // Відсотки від прибутку
     for (int i = 0; i < size; ++i) {
         if (people[i].salaryType == 3) {
             people[i].salary = people[i].profitReceived * (people[i].myPercentage / 100.0);       // Прибуток від відсотока
@@ -37,17 +37,17 @@ void interestOnProfits(int size, info* people) {    // Відсотки від �
     }
 }
 
-void timeWorked(int size, info* people) {   // Відпрацьований час
+void TimeWorked(int size, Info* people) {   // Відпрацьований час
     for (int i = 0; i < size; ++i) {
         if (people[i].salaryType == 2) {
-            people[i].salary = people[i].workedHours * people[i].hourlyPay;   // Зарплата за день
+            people[i].salary = people[i].workedHours * people[i].hourlyPay;     // Зарплата за день
             people[i].tax = people[i].salary * (19.5 / 100.0);                  // Податок
             people[i].issueAmount = people[i].salary - people[i].tax;           // Сума до видачі за день
         }
     }
 }
 
-void salaries(int size, info* people) {     // Посадовий оклад
+void Salaries(int size, Info* people) {     // Посадовий оклад
     for (int i = 0; i < size; ++i) {
         if (people[i].salaryType == 1) {
             people[i].salary = people[i].salaryInMonth / people[i].shouldDays * people[i].workedDays;   // Головна зарплата
@@ -63,7 +63,7 @@ void salaries(int size, info* people) {     // Посадовий оклад
     }
 }
 
-void result(int size, info* people) {   // Вивід результату
+void Result(int size, Info* people) {   // Вивід результату
     system("cls");
     std::cout << std::setiosflags(std::ios::left);
     std::cout << std::setw(5) << '#' << std::setw(13) << "Salary type" << std::setw(15) << "Surname" << std::setw(15)
@@ -92,7 +92,7 @@ void result(int size, info* people) {   // Вивід результату
 int main() {        // Введення інформації
     const int size = 10;     // Кількість робітників
 
-    info people[size];
+    Info people[size];
 
     std::cout << "Select salary:\n"
               << "1 - Salaries;\n"
@@ -309,9 +309,9 @@ int main() {        // Введення інформації
         }
         std::cout << '\n';
     }
-    salaries(size, people);
-    timeWorked(size, people);
-    interestOnProfits(size, people);
-    result(size, people);
+    Salaries(size, people);
+    TimeWorked(size, people);
+    InterestOnProfits(size, people);
+    Result(size, people);
     return 0;
 }

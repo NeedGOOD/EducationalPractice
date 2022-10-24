@@ -41,18 +41,22 @@ void SortingThree(Train* train, int size) {
 
         for (int i = j; i < size; ++i) {
             if (train[min].GetStation() > train[i].GetStation()) { min = i; }
+            else if (train[min].GetStation() == train[i].GetStation()) {
+                if (train[min].GetDepartureTime() > train[i].GetDepartureTime()) { min = i; }
+            }
         }
         std::swap(train[min], train[j]);
     }
 
-    for (int j = 0; j < size; ++j) {
-        int min = j;
+    //for (int j = 0; j < size; ++j) {
+        //int min = j;
 
-        for (int i = j; i < size; ++i) {
-            if (train[min].GetDepartureTime() > train[i].GetDepartureTime()) { min = i; }
-        }
-        std::swap(train[min], train[j]);
-    }
+        //for (int i = j; i < size; ++i) {
+            //if (train[min].GetDepartureTime() > train[i].GetDepartureTime()) { min = i; }
+        //}
+        //std::swap(train[min], train[j]);
+    //}
+
     std::cout << std::setiosflags(std::ios::left);
     std::cout << std::setw(15) << "station" << std::setw(15) << "number train"
               << std::setw(20) << "departure time" << '\n';

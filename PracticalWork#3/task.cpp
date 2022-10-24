@@ -100,17 +100,14 @@ int main() {
 
     double average = 0.0;   // Середнє
 
-    for (int i = 0; i < size; ++i) {
-        average += trapeze[i].GetArea();
-    }
+    for (int i = 0; i < size; ++i) { average += trapeze[i].GetArea(); }
+    
     average /= size;
 
     int bigAverage = 0;
 
     for (int i = 0; i < size; ++i) {
-        if (average < trapeze[i].GetArea()) {
-            ++bigAverage;
-        }
+        if (average < trapeze[i].GetArea()) { ++bigAverage; }
     }
     std::cout << "Have average: " << bigAverage << '\n';
     return 0;

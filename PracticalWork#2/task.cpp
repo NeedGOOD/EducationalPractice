@@ -59,9 +59,7 @@ public:
     void SendMessage(std::string numbers[], const int size) {
         std::cout << "Number" << '\n';
 
-        for (int i = 0; i < size; ++i) {
-            std::cout << numbers[i] << '\n';
-        }
+        for (int i = 0; i < size; ++i) { std::cout << numbers[i] << '\n'; }
     }
 };
 

@@ -52,14 +52,14 @@ void Salaries(int size, Info* people) {     // Посадовий оклад
         if (people[i].salaryType == 1) {
             people[i].salary = people[i].salaryInMonth / people[i].shouldDays * people[i].workedDays;   // Головна зарплата
 
-            if (people[i].shouldDays == people[i].workedDays) {             // Премія 25% за всі відпрацьовані дні
-                people[i].premium = people[i].salary * (25.0 / 100.0);
-            } else if (people[i].shouldDays != people[i].workedDays) {      // Просто премія 10%
-                people[i].premium = people[i].salary * (10.0 / 100.0);
-            }
+            // Премія 25% за всі відпрацьовані дні
+            if (people[i].shouldDays == people[i].workedDays) { people[i].premium = people[i].salary * (25.0 / 100.0); }
+            // Просто премія 10%
+            else if (people[i].shouldDays != people[i].workedDays) { people[i].premium = people[i].salary * (10.0 / 100.0); }
+
             people[i].tax = (people[i].salary + people[i].premium) * (19.5 / 100.0);        // Податок
             people[i].issueAmount = people[i].salary + people[i].premium - people[i].tax;   // Сума до видачі за місяць
-        }        
+        }
     }
 }
 
@@ -73,17 +73,9 @@ void Result(int size, Info* people) {   // Вивід результату
         std::cout << std::setw(5) << i << std::setw(13) << people[i].salaryType << std::setw(15) << people[i].surname
                   << std::setw(15) << people[i].name << std::setw(17) << people[i].middleName;
 
-        if (people[i].salaryType == 1) {
-            std::cout << std::setw(15) << people[i].issueAmount;
-        }
-        
-        if (people[i].salaryType == 2) {
-            std::cout << std::setw(15) << people[i].issueAmount;
-        }
-
-        if (people[i].salaryType == 3) {
-            std::cout << std::setw(15) << people[i].issueAmount;
-        }
+        if (people[i].salaryType == 1) { std::cout << std::setw(15) << people[i].issueAmount; }
+        if (people[i].salaryType == 2) { std::cout << std::setw(15) << people[i].issueAmount; }
+        if (people[i].salaryType == 3) { std::cout << std::setw(15) << people[i].issueAmount; }
         std::cout << '\n';
     }
     std::cout << '\n';

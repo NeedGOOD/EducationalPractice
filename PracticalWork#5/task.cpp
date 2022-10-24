@@ -25,9 +25,7 @@ public:
     void Output() {     // Вивід
         std::cout << '\n';
 
-        for (int i = 0; i < words.size(); ++i) {
-            std::cout << "word - " << words[i] << '\n';
-        }
+        for (int i = 0; i < words.size(); ++i) { std::cout << "word - " << words[i] << '\n'; }
         std::cout << '\n';
     }
 
@@ -78,9 +76,8 @@ public:
         std::string word = NewWord();
 
         for (int i = 0; i < words.size(); ++i) {
-            if (word == words[i]) { // Є
-                return i;
-            }
+            // Є
+            if (word == words[i]) { return i; }
         }
         return -1;  // Немає
     }

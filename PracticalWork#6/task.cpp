@@ -125,7 +125,7 @@ public:
 };
 
 int main() {
-    const int size = 3;
+    const int size = 5;
 
     Train train[size];
 

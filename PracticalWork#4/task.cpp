@@ -22,33 +22,33 @@ public:
     void SetBaseArea(double newValue) { baseArea = newValue; }
 
     void Result() {     // Вивід
-        std::cout << "amount = " << GetAmount() << '\n';
-        std::cout << "height = " << height << '\n';
-        std::cout << "number of faces = " << numberOfFaces << '\n';
-        std::cout << "leghth of sides = " << lengthOfSides << '\n';
-        std::cout << "base area = " << baseArea << '\n';
+        std::cout << "Amount = " << GetAmount() << '\n';
+        std::cout << "Height = " << height << '\n';
+        std::cout << "Number of faces = " << numberOfFaces << '\n';
+        std::cout << "Leghth of sides = " << lengthOfSides << '\n';
+        std::cout << "Base area = " << baseArea << '\n';
     }
 };
 
 int main() {
     double height;  // Висота
 
-    std::cout << "height: ";
+    std::cout << "Height: ";
     std::cin >> height;
 
     double length;  // Довжина
 
-    std::cout << "lenght: ";
+    std::cout << "Lenght: ";
     std::cin >> length;
 
     double numberOfFace;    // Грані
 
-    std::cout << "number of face: ";
+    std::cout << "Number of face: ";
     std::cin >> numberOfFace;
 
     double area;        // Площа
 
-    std::cout << "area: ";
+    std::cout << "Area: ";
     std::cin >> area;
     std::cout << '\n';
 

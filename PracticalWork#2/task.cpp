@@ -18,28 +18,30 @@ public:
     Phone(std::string number, std::string model) : Phone(number, model, 250) {}
 
     Phone() {
-        std::cout << "number phone: ";
+        std::cout << "Number phone: ";
         std::cin >> number;                 // Номер телефону
 
         std::cin.get();
-        std::cout << "model: ";
+        std::cout << "Model: ";
         getline(std::cin, model);           // Модель
 
-        std::cout << "weight in grams: ";
+        std::cout << "Weight in grams: ";
         std::cin >> weight;                 // Вага в грамах
 
-        while (weight < 50 || weight > 300) {    // Провірка
+        while (weight < 50 || weight > 300) {    // Перевірка
             std::cout << "// Error: ";
-            std::cout << "weight in grams: ";
+            std::cout << "Weight in grams: ";
             std::cin >> weight;
         }
     }
 
-    void Result() {         // Вивід
+    void Result() {     // Вивід
         std::cout << std::setiosflags(std::ios::left);
-        std::cout << std::setw(15) << "Number" << std::setw(20) << "Model"
+        std::cout << std::setw(15) << "Number"
+                  << std::setw(20) << "Model"
                   << std::setw(10) << "Weight" << '\n';
-        std::cout << std::setw(15) << number << std::setw(20) << model
+        std::cout << std::setw(15) << number
+                  << std::setw(20) << model
                   << std::setw(10) << weight << '\n';
     }
 

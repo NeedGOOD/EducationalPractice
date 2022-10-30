@@ -66,8 +66,12 @@ void Salaries(int size, Info* people) {     // Посадовий оклад
 void Result(int size, Info* people) {   // Вивід результату
     system("cls");
     std::cout << std::setiosflags(std::ios::left);
-    std::cout << std::setw(5) << '#' << std::setw(13) << "Salary type" << std::setw(15) << "Surname" << std::setw(15)
-              << "Name" << std::setw(17) << "Middle name" << std::setw(15) << "Salary" << '\n';
+    std::cout << std::setw(5) << '#'
+              << std::setw(13) << "Salary type"
+              << std::setw(15) << "Surname"
+              << std::setw(15) << "Name"
+              << std::setw(17) << "Middle name"
+              << std::setw(15) << "Salary" << '\n';
     
     for (int i = 0; i < size; ++i) {
         std::cout << std::setw(5) << i
@@ -98,7 +102,7 @@ int main() {        // Введення інформації
         std::cout << "Salary selection: ";
         std::cin >> people[i].salaryType;      // Вибір зарплати
 
-        while (people[i].salaryType < 1 || people[i].salaryType > 3) {    // Перевірка діапазона
+        while (people[i].salaryType < 1 || people[i].salaryType > 3) {    // Перевірка
             std::cout << "\n// Error: you not right choice!\n";
             std::cout << "Salary selection: ";
             std::cin >> people[i].salaryType;
@@ -106,7 +110,7 @@ int main() {        // Введення інформації
         std::cout << "Surname: ";
         std::cin >> people[i].surname;      // Призвіща
 
-        while (people[i].surname < "A" || people[i].surname > "Z") {          // Перевірка діапазона
+        while (people[i].surname < "A" || people[i].surname > "Z") {          // Перевірка
             std::cout << "\n// Error: surname writes this BIG word!\n";
             std::cout << "Surname: ";
             std::cin >> people[i].surname;
@@ -114,7 +118,7 @@ int main() {        // Введення інформації
         std::cout << "Name: ";
         std::cin >> people[i].name;         // Ім'я
 
-        while (people[i].name < "A" || people[i].name > "Z") {                // Перевірка діапазона
+        while (people[i].name < "A" || people[i].name > "Z") {                // Перевірка
             std::cout << "\n// Error: name writes this BIG word!\n";
             std::cout << "Name: ";
             std::cin >> people[i].name;
@@ -122,7 +126,7 @@ int main() {        // Введення інформації
         std::cout << "Middle name: ";
         std::cin >> people[i].middleName;   // По батькові
 
-        while (people[i].middleName < "A" || people[i].middleName > "Z") {    // Перевірка діапазона
+        while (people[i].middleName < "A" || people[i].middleName > "Z") {    // Перевірка
             std::cout << "\n// Error: Middle name writes this BIG word!\n";
             std::cout << "Middle name: ";
             std::cin >> people[i].middleName;
@@ -145,7 +149,7 @@ int main() {        // Введення інформації
             std::cout << "In what month: ";
             std::cin >> people[i].month;            // За який місяць
             
-            while (people[i].month < 1 || people[i].month > 12) {               // Перевірка діапазона
+            while (people[i].month < 1 || people[i].month > 12) {               // Перевірка
                 std::cout << "\n// Error: year have a from 1 to 12 months!\n";
                 std::cout << "In what month: ";
                 std::cin >> people[i].month;
@@ -155,7 +159,7 @@ int main() {        // Введення інформації
                 std::cout << "How many days do you have to work in a month: ";
                 std::cin >> people[i].shouldDays;       // Повиний відпрацювати
                 
-                while (people[i].shouldDays < 1 || people[i].shouldDays > 31) {         // Перевірка діапазона
+                while (people[i].shouldDays < 1 || people[i].shouldDays > 31) {         // Перевірка
                     std::cout << "\n// Error: this month have a from 1 to 31 days!\n";
                     std::cout << "How many days do you have to work in a month: ";
                     std::cin >> people[i].shouldDays;
@@ -164,7 +168,7 @@ int main() {        // Введення інформації
                 std::cout << "How many days do you have to work in a month: ";
                 std::cin >> people[i].shouldDays;       // Повиний відпрацювати
                 
-                while (people[i].shouldDays < 1 || people[i].shouldDays > 29) {         // Перевірка діапазона
+                while (people[i].shouldDays < 1 || people[i].shouldDays > 29) {         // Перевірка
                     std::cout << "\n// Error: this month have a from 1 to 29 days!\n";
                     std::cout << "How many days do you have to work in a month: ";
                     std::cin >> people[i].shouldDays;
@@ -173,7 +177,7 @@ int main() {        // Введення інформації
                 std::cout << "How many days do you have to work in a month: ";
                 std::cin >> people[i].shouldDays;       // Повиний відпрацювати
             
-                while (people[i].shouldDays < 1 || people[i].shouldDays > 31) {         // Перевірка діапазона
+                while (people[i].shouldDays < 1 || people[i].shouldDays > 31) {         // Перевірка
                     std::cout << "\n// Error: this month have a from 1 to 31 days!\n";
                     std::cout << "How many days do you have to work in a month: ";
                     std::cin >> people[i].shouldDays;
@@ -182,7 +186,7 @@ int main() {        // Введення інформації
                 std::cout << "How many days do you have to work in a month: ";
                 std::cin >> people[i].shouldDays;       // Повиний відпрацювати
             
-                while (people[i].shouldDays < 1 || people[i].shouldDays > 30) {         // Перевірка діапазона
+                while (people[i].shouldDays < 1 || people[i].shouldDays > 30) {         // Перевірка
                     std::cout << "\n// Error: this month have a from 1 to 30 days!\n";
                     std::cout << "How many days do you have to work in a month: ";
                     std::cin >> people[i].shouldDays;
@@ -191,7 +195,7 @@ int main() {        // Введення інформації
                 std::cout << "How many days do you have to work in a month: ";
                 std::cin >> people[i].shouldDays;       // Повиний відпрацювати
             
-                while (people[i].shouldDays < 1 || people[i].shouldDays > 31) {         // Перевірка діапазона
+                while (people[i].shouldDays < 1 || people[i].shouldDays > 31) {         // Перевірка
                     std::cout << "\n// Error: this month have a from 1 to 31 days!\n";
                     std::cout << "How many days do you have to work in a month: ";
                     std::cin >> people[i].shouldDays;
@@ -200,7 +204,7 @@ int main() {        // Введення інформації
                 std::cout << "How many days do you have to work in a month: ";
                 std::cin >> people[i].shouldDays;       // Повиний відпрацювати
             
-                while (people[i].shouldDays < 1 || people[i].shouldDays > 30) {         // Перевірка діапазона
+                while (people[i].shouldDays < 1 || people[i].shouldDays > 30) {         // Перевірка
                     std::cout << "\n// Error: this month have a from 1 to 30 days!\n";
                     std::cout << "How many days do you have to work in a month: ";
                     std::cin >> people[i].shouldDays;
@@ -209,7 +213,7 @@ int main() {        // Введення інформації
                 std::cout << "How many days do you have to work in a month: ";
                 std::cin >> people[i].shouldDays;       // Повиний відпрацювати
             
-                while (people[i].shouldDays < 1 || people[i].shouldDays > 31) {         // Перевірка діапазона
+                while (people[i].shouldDays < 1 || people[i].shouldDays > 31) {         // Перевірка
                     std::cout << "\n// Error: this month have a from 1 to 31 days!\n";
                     std::cout << "How many days do you have to work in a month: ";
                     std::cin >> people[i].shouldDays;
@@ -218,7 +222,7 @@ int main() {        // Введення інформації
                 std::cout << "How many days do you have to work in a month: ";
                 std::cin >> people[i].shouldDays;       // Повиний відпрацювати
             
-                while (people[i].shouldDays < 1 || people[i].shouldDays > 31) {         // Перевірка діапазона
+                while (people[i].shouldDays < 1 || people[i].shouldDays > 31) {         // Перевірка
                     std::cout << "\n// Error: this month have a from 1 to 31 days!\n";
                     std::cout << "How many days do you have to work in a month: ";
                     std::cin >> people[i].shouldDays;
@@ -227,7 +231,7 @@ int main() {        // Введення інформації
                 std::cout << "How many days do you have to work in a month: ";
                 std::cin >> people[i].shouldDays;       // Повиний відпрацювати
             
-                while (people[i].shouldDays < 1 || people[i].shouldDays > 30) {         // Перевірка діапазона
+                while (people[i].shouldDays < 1 || people[i].shouldDays > 30) {         // Перевірка
                     std::cout << "\n// Error: this month have a from 1 to 30 days!\n";
                     std::cout << "How many days do you have to work in a month: ";
                     std::cin >> people[i].shouldDays;
@@ -236,7 +240,7 @@ int main() {        // Введення інформації
                 std::cout << "How many days do you have to work in a month: ";
                 std::cin >> people[i].shouldDays;       // Повиний відпрацювати
             
-                while (people[i].shouldDays < 1 || people[i].shouldDays > 31) {         // Перевірка діапазона
+                while (people[i].shouldDays < 1 || people[i].shouldDays > 31) {         // Перевірка
                     std::cout << "\n// Error: this month have a from 1 to 31 days!\n";
                     std::cout << "How many days do you have to work in a month: ";
                     std::cin >> people[i].shouldDays;
@@ -245,7 +249,7 @@ int main() {        // Введення інформації
                 std::cout << "How many days do you have to work in a month: ";
                 std::cin >> people[i].shouldDays;       // Повиний відпрацювати
             
-                while (people[i].shouldDays < 1 || people[i].shouldDays > 30) {         // Перевірка діапазона
+                while (people[i].shouldDays < 1 || people[i].shouldDays > 30) {         // Перевірка
                     std::cout << "\n// Error: this month have a from 1 to 30 days!\n";
                     std::cout << "How many days do you have to work in a month: ";
                     std::cin >> people[i].shouldDays;
@@ -254,7 +258,7 @@ int main() {        // Введення інформації
                 std::cout << "How many days do you have to work in a month: ";
                 std::cin >> people[i].shouldDays;       // Повиний відпрацювати
             
-                while (people[i].shouldDays < 1 || people[i].shouldDays > 31) {         // Перевірка діапазона
+                while (people[i].shouldDays < 1 || people[i].shouldDays > 31) {         // Перевірка
                     std::cout << "\n// Error: this month have a from 1 to 31 days!\n";
                     std::cout << "How many days do you have to work in a month: ";
                     std::cin >> people[i].shouldDays;
@@ -263,7 +267,7 @@ int main() {        // Введення інформації
             std::cout << "How many days did you work in a month: ";
             std::cin >> people[i].workedDays;       // Відпрацював на ділі
             
-            while (people[i].workedDays < 0 || people[i].workedDays > people[i].shouldDays) {       // Перевірка діапазона
+            while (people[i].workedDays < 0 || people[i].workedDays > people[i].shouldDays) {       // Перевірка
                 std::cout << "\n// Error: enter a number from 0 to " << people[i].shouldDays << "!\n";
                 std::cout << "How many days did you work in a month: ";
                 std::cin >> people[i].workedDays;
@@ -274,7 +278,7 @@ int main() {        // Введення інформації
             std::cout << "How much you worked today: ";
             std::cin >> people[i].workedHours;      // Відпрацював годин
 
-            while (people[i].workedHours < 1 || people[i].workedHours > 24) {         // Перевірка діапазона
+            while (people[i].workedHours < 1 || people[i].workedHours > 24) {         // Перевірка
                 std::cout << "\nError: day have a from 0 to 24 hours!\n";
                 std::cout << "How much you worked hours today: ";
                 std::cin >> people[i].workedHours;
@@ -296,7 +300,7 @@ int main() {        // Введення інформації
             std::cout << "How much your interest: ";
             std::cin >> people[i].myPercentage;     // Відсоток
 
-            while (people[i].myPercentage < 0 || people[i].myPercentage > 100) {    // Перевірка діапазона
+            while (people[i].myPercentage < 0 || people[i].myPercentage > 100) {    // Перевірка
                 std::cout << "\nError: interest have a from 0 to 100 number!\n";
                 std::cout << "How much your interest: ";
                 std::cin >> people[i].myPercentage;

@@ -11,10 +11,10 @@ private:
     int departureTimeMinutes;   // Хвилини
 public:
     Train() {
-        std::cout << "station: ";   // Станція
+        std::cout << "Station: ";   // Станція
         std::cin >> station;
 
-        std::cout << "number train: ";  // Номер вагона
+        std::cout << "Number train: ";  // Номер вагона
         std::cin >> numberTrain;
 
         while (numberTrain < 1) {   // Превірка
@@ -22,21 +22,21 @@ public:
             std::cout << "Number train: ";
             std::cin >> numberTrain;
         }
-        std::cout << "departure time:\n"    // Час відправлення
-                  << "\thours: ";             // Години
+        std::cout << "Departure time:\n"    // Час відправлення
+                  << "\tHours: ";             // Години
         std::cin >> departureTimeHours;
 
         while (departureTimeHours < 0 || departureTimeHours > 23) {     // Превірка
             std::cout << "// Error\n";
-            std::cout << "\thours: ";
+            std::cout << "\tHours: ";
             std::cin >> departureTimeHours;
         }
-        std::cout << "\tminutes: ";           // Хвилини
+        std::cout << "\tMinutes: ";           // Хвилини
         std::cin >> departureTimeMinutes;
 
         while (departureTimeMinutes < 0 || departureTimeMinutes > 59) { // Превірка
             std::cout << "// Error\n";
-            std::cout << "\tminutes: ";
+            std::cout << "\tMinutes: ";
             std::cin >> departureTimeMinutes;
         }
     }
@@ -58,9 +58,9 @@ public:
         }
         // Вивід
         std::cout << std::setiosflags(std::ios::left);
-        std::cout << std::setw(15) << "station"
-                  << std::setw(15) << "number train"
-                  << std::setw(20) << "departure time" << '\n';
+        std::cout << std::setw(15) << "Station"
+                  << std::setw(15) << "Number train"
+                  << std::setw(20) << "Departure time" << '\n';
 
         for (int i = 0; i < size; ++i) {
             std::cout << std::setw(15) << train[i].station
@@ -84,12 +84,12 @@ public:
     static void SortingTwo(Train* train, int size) {    // Пошук номер вагона
         int infoTrain;
         
-        std::cout << "enter number train: ";    // Шукаю вагон
+        std::cout << "Enter number train: ";    // Шукаю вагон
         std::cin >> infoTrain;
 
         while (infoTrain < 1) {     // Превірка
             std::cout << "// Error\n";
-            std::cout << "enter number train: ";
+            std::cout << "Enter number train: ";
             std::cin >> infoTrain;
         }
 
@@ -105,9 +105,9 @@ public:
 
         // Якщо є номер вагона - виводжу інформацію
         std::cout << std::setiosflags(std::ios::left);
-        std::cout << std::setw(15) << "station"
-                  << std::setw(15) << "number train"
-                  << std::setw(20) << "departure time" << '\n';
+        std::cout << std::setw(15) << "Station"
+                  << std::setw(15) << "Number train"
+                  << std::setw(20) << "Departure time" << '\n';
 
         for (int i = 0; i < size; ++i) {
             if (train[i].numberTrain == infoTrain) {

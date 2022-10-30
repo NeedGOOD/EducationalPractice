@@ -9,12 +9,12 @@ public:
 
     void Input() {      // Введення
         for (int i = 0; i < words.size(); ++i) {
-            std::cout << "word: ";
+            std::cout << "Word: ";
             std::cin >> words[i];
 
             while (words[i].length() > 10) {    // Перевірка
                 std::cout << "// Error\n";
-                std::cout << "word: ";
+                std::cout << "Word: ";
                 std::cin >> words[i];
                 std::cout << '\n';
             }
@@ -24,7 +24,7 @@ public:
 
     void Output() {     // Вивід
         std::cout << '\n';
-        for (int i = 0; i < words.size(); ++i) { std::cout << "word - " << words[i] << '\n'; }
+        for (int i = 0; i < words.size(); ++i) { std::cout << "Word - " << words[i] << '\n'; }
         std::cout << '\n';
     }
 
@@ -38,12 +38,12 @@ public:
     int Index() {   // Індекс
         int enteredIndex;
 
-        std::cout << "select index: ";
+        std::cout << "Select index: ";
         std::cin >> enteredIndex;
 
         while (enteredIndex < 0 || enteredIndex > words.size()) {   // Перевірка
             std::cout << "// Error\n";
-            std::cout << "select index: ";
+            std::cout << "Select index: ";
             std::cin >> enteredIndex;
         }
         return enteredIndex;
@@ -52,12 +52,12 @@ public:
     std::string NewWord() {     // Нове слово
         std::string newWord;
         
-        std::cout << "new word: ";
+        std::cout << "New word: ";
         std::cin >> newWord;
         
         while (newWord.length() > 10) {
             std::cout << "// Error\n";
-            std::cout << "new word: ";
+            std::cout << "New word: ";
             std::cin >> newWord;
         }
         return newWord;
@@ -68,7 +68,7 @@ public:
 
         words[index] += NewWord();
 
-        std::cout << "\nword - " << words[index] << "\n\n";
+        std::cout << "\nWord - " << words[index] << "\n\n";
     }
 
     int IsThere() {     // Перевірка наявність рядка
@@ -85,7 +85,7 @@ public:
 int main() {
     int size = 0;   // Кількість рядків
 
-    std::cout << "size: ";
+    std::cout << "Size: ";
     std::cin >> size;
     std::cout << '\n';
 
@@ -99,6 +99,6 @@ int main() {
 
     works.Association();
 
-    std::cout << "\nindex: " << works.IsThere() << '\n';
+    std::cout << "\nIndex: " << works.IsThere() << '\n';
     return 0;
 }

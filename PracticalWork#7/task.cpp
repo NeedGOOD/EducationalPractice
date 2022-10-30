@@ -146,7 +146,7 @@ public:
 };
 
 int main() {
-    const int size = 2;
+    const int size = 5;
 
     Trucks trucks[size];
 

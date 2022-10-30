@@ -57,13 +57,13 @@ public:
 
         perimeter = a + b + c + d;      // Периметр
 
-        std::cout << "perimeter = " << perimeter << '\n';
+        std::cout << "Perimeter = " << perimeter << '\n';
 
         h = (1.0 / 2.0) * sqrt(4.0 * pow(c, 2) - pow(a - b, 2));    // Висота
 
         area = ((a + b) / 2.0) * h;     // Площа
         
-        std::cout << "area = " << area << '\n';
+        std::cout << "Area = " << area << '\n';
     }
 
     double GetArea() { return area; }
@@ -72,11 +72,8 @@ public:
         double AC = sqrt(pow(C.x - A.x, 2) + pow(C.y - A.y, 2));
         double BD = sqrt(pow(D.x - B.x, 2) + pow(D.y - B.y, 2));
 
-        if (AC == BD) {     // Так
-            std::cout << "The figure is an equilateral trapezoid.\n";
-        } else {            // Ні
-            std::cout << "The figure is not an isosceles trapezoid.\n";
-        }
+        if (AC == BD) { std::cout << "The figure is an equilateral trapezoid.\n"; } // Так
+        else { std::cout << "The figure is not an isosceles trapezoid.\n"; }    // Ні
     }
 };
 

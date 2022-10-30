@@ -43,9 +43,7 @@ public:
                   << std::setw(10) << weight << '\n';
     }
 
-    void ReceiveCall(std::string name) {
-        std::cout << "Calling " << name << '\n';
-    }
+    void ReceiveCall(std::string name) { std::cout << "Calling " << name << '\n'; }
 
     void ReceiveCall(std::string phoneName, std::string phoneNumber) {
         std::cout << "Calling " << phoneName << '\n'

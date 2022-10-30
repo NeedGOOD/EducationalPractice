@@ -24,7 +24,6 @@ public:
 
     void Output() {     // Вивід
         std::cout << '\n';
-
         for (int i = 0; i < words.size(); ++i) { std::cout << "word - " << words[i] << '\n'; }
         std::cout << '\n';
     }

@@ -70,8 +70,11 @@ void Result(int size, Info* people) {   // Вивід результату
               << "Name" << std::setw(17) << "Middle name" << std::setw(15) << "Salary" << '\n';
     
     for (int i = 0; i < size; ++i) {
-        std::cout << std::setw(5) << i << std::setw(13) << people[i].salaryType << std::setw(15) << people[i].surname
-                  << std::setw(15) << people[i].name << std::setw(17) << people[i].middleName;
+        std::cout << std::setw(5) << i
+                  << std::setw(13) << people[i].salaryType
+                  << std::setw(15) << people[i].surname
+                  << std::setw(15) << people[i].name
+                  << std::setw(17) << people[i].middleName;
 
         if (people[i].salaryType == 1) { std::cout << std::setw(15) << people[i].issueAmount; }
         if (people[i].salaryType == 2) { std::cout << std::setw(15) << people[i].issueAmount; }

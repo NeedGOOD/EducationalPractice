@@ -23,20 +23,20 @@ public:
             std::cin >> numberTrain;
         }
         std::cout << "departure time:\n"    // Час відправлення
-                  << "hours: ";             // Години
+                  << "\thours: ";             // Години
         std::cin >> departureTimeHours;
 
         while (departureTimeHours < 0 || departureTimeHours > 23) {     // Превірка
             std::cout << "// Error\n";
-            std::cout << "hours: ";
+            std::cout << "\thours: ";
             std::cin >> departureTimeHours;
         }
-        std::cout << "minutes: ";           // Хвилини
+        std::cout << "\tminutes: ";           // Хвилини
         std::cin >> departureTimeMinutes;
 
         while (departureTimeMinutes < 0 || departureTimeMinutes > 59) { // Превірка
             std::cout << "// Error\n";
-            std::cout << "minutes: ";
+            std::cout << "\tminutes: ";
             std::cin >> departureTimeMinutes;
         }
     }
@@ -58,12 +58,26 @@ public:
         }
         // Вивід
         std::cout << std::setiosflags(std::ios::left);
-        std::cout << std::setw(15) << "station" << std::setw(15) << "number train"
+        std::cout << std::setw(15) << "station"
+                  << std::setw(15) << "number train"
                   << std::setw(20) << "departure time" << '\n';
 
         for (int i = 0; i < size; ++i) {
-            std::cout << std::setw(15) << train[i].station << std::setw(15) << train[i].numberTrain
-                      << train[i].departureTimeHours << ':' << train[i].departureTimeMinutes << '\n';
+            std::cout << std::setw(15) << train[i].station
+                      << std::setw(15) << train[i].numberTrain;
+
+            if (train[i].departureTimeHours < 10) {
+                std::cout << '0' << train[i].departureTimeHours << ':';
+
+                if (train[i].departureTimeMinutes < 10)
+                { std::cout << '0' << train[i].departureTimeMinutes << '\n'; }
+                else { std::cout << train[i].departureTimeMinutes << '\n'; }
+            } else { std::cout << train[i].departureTimeHours << ':';
+
+                if (train[i].departureTimeMinutes < 10)
+                { std::cout << '0' << train[i].departureTimeMinutes << '\n'; }
+                else { std::cout << train[i].departureTimeMinutes << '\n'; }
+            }
         }
     }
 
@@ -82,26 +96,38 @@ public:
         bool haveTrain = false;
 
         for (int i = 0; i < size; ++i) {    // Якщо є номер вагона - виводжу
-            if (train[i].numberTrain == infoTrain) {
-                haveTrain = true;
-            }
+            if (train[i].numberTrain == infoTrain) { haveTrain = true; }
         }
 
-        if (haveTrain) {    // Якщо є номер вагона - виводжу інформацію
-            std::cout << std::setiosflags(std::ios::left);
-            std::cout << std::setw(15) << "station" << std::setw(15) << "number train"
-                      << std::setw(20) << "departure time" << '\n';
+        // Якщо немає номера вагона "невиводжу"
+        if (!haveTrain) { std::cout << "Not have this number train.\n"; 
+                          return; }
 
-            for (int i = 0; i < size; ++i) {
-                if (train[i].numberTrain == infoTrain) {
-                    std::cout << std::setw(15) << train[i].station << std::setw(15) << train[i].numberTrain
-                              << train[i].departureTimeHours << ':' << train[i].departureTimeMinutes << '\n';
+        // Якщо є номер вагона - виводжу інформацію
+        std::cout << std::setiosflags(std::ios::left);
+        std::cout << std::setw(15) << "station"
+                  << std::setw(15) << "number train"
+                  << std::setw(20) << "departure time" << '\n';
+
+        for (int i = 0; i < size; ++i) {
+            if (train[i].numberTrain == infoTrain) {
+                std::cout << std::setw(15) << train[i].station
+                          << std::setw(15) << train[i].numberTrain;
+
+                if (train[i].departureTimeHours < 10) {
+                    std::cout << '0' << train[i].departureTimeHours << ':';
+
+                    if (train[i].departureTimeMinutes < 10)
+                    { std::cout << '0' << train[i].departureTimeMinutes << '\n'; }
+                    else { std::cout << train[i].departureTimeMinutes << '\n'; }
+                } else { std::cout << train[i].departureTimeHours << ':';
+
+                    if (train[i].departureTimeMinutes < 10)
+                    { std::cout << '0' << train[i].departureTimeMinutes << '\n'; }
+                    else { std::cout << train[i].departureTimeMinutes << '\n'; }
                 }
             }
         }
-
-        // Якщо немає номера вагона - "невиводжу"
-        if (!haveTrain) { std::cout << "Not have this number train.\n"; }
     }
 
     static void SortingOne(Train* train,  int size) {   // Сортування номерів вагонів
@@ -125,7 +151,7 @@ public:
 };
 
 int main() {
-    const int size = 5;
+    const int size = 1;
 
     Train train[size];
 

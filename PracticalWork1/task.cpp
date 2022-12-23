@@ -74,7 +74,7 @@ void Result(int size, Info* people) {   // Вивід результату
               << std::setw(15) << "Salary" << '\n';
     
     for (int i = 0; i < size; ++i) {
-        std::cout << std::setw(5) << i
+        std::cout << std::setw(5) << i + 1
                   << std::setw(13) << people[i].salaryType
                   << std::setw(15) << people[i].surname
                   << std::setw(15) << people[i].name
